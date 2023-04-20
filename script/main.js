@@ -1,38 +1,44 @@
-alert ( "Hola, bienvenido a nuestro sistema de turnos Optica Eyra");
+function saludar() {
+    console.log("Bienvenido a nuestro sistema de turnos Optica Eyra");
+}
+saludar()
+alert("Bienvenido a nuestro sistema de turnos Optica Eyra")
 
-nombreapellido = prompt ("¿Cual es tu nombre y apellido?");
-console.log(nombreapellido);
+let nombreyapellido = "Mayra Rivas";
+nombreyapellido = prompt ("¿Cual es tu nombre y apellido?");
+console.log("Mi nombre y apellido es " + nombreyapellido );
 
-let edad = parseInt(prompt("¿Cual es tu edad?"));
+
+parseInt(prompt("¿Cual es tu edad")) 
+console.log("Edad introducida es " + edad);
+let edad = 14;
 if (edad >= 18) {
 
-
-alert("Tu puedes seleccionar un turno"
-);
+alert("Tu puedes seleccionar un turno");
 }else{
     alert("Tu no puedes seleccionar un turno, eres menor de edad");
 }
 
-
-let precio = 2500
-let pacientes
-let total
-pacientes = prompt ("¿Cuantas personas de tu grupo familiar se atenderan hoy?");
-console.log("--> Personas ingresadas", pacientes);
-
-if (pacientes) {
-    
-}
-/* LISTADO DE LOS 10 PACIENTES QUE SE ATENDERAN HOY CON EL DR*/
-for (let Nombreapellido ; <=10 ; index++) {
-    console.log("Nombre y apellido" ,Nombreapellido, "de las 10 personas que se atenderan hoy con el dr");
-    
+let cantidaddepacientes = parseInt(prompt("¿Cuantos pacientes atendera hoy el Dr?"));
+for (let turno = 1; turno <= cantidaddepacientes; turno++) {
+    let nombre = prompt("¿Como se llama el paciente" + turno + "?");
+    console.log("El paciente ," + nombre + "tiene asignado el turno numero" + turno);
 }
 
 
+let paciente = {
+    Nombre: "Mayra",
+    Apellido: "Rivas",
+    DNI: "37870963",
+    Nacionalidad: "Argentina",
+    Celular: 1125356786,
+    PrimeraConsulta: "si",
+}
+
+console.log(paciente)
 
 
-
+const Productos = ["LenteDeSol", "LentesConGraduacion", "LentesDeContacto"]
 
 
 
