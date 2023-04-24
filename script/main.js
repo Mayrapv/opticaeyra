@@ -8,16 +8,13 @@ let nombreyapellido = "Mayra Rivas";
 nombreyapellido = prompt ("¿Cual es tu nombre y apellido?");
 console.log("Mi nombre y apellido es " + nombreyapellido );
 
-
-parseInt(prompt("¿Cual es tu edad")) 
-console.log("Edad introducida es " + edad);
-let edad = 14;
+let edad = prompt("¿Cual es tu edad?")
 if (edad >= 18) {
-
-alert("Tu puedes seleccionar un turno");
-}else{
-    alert("Tu no puedes seleccionar un turno, eres menor de edad");
+    alert("Sos mayor de edad, puedes seleccionar un turno")
+} else {
+    alert("Sos menor de edad, no púedes seleccionar un turno")
 }
+
 
 let cantidaddepacientes = parseInt(prompt("¿Cuantos pacientes atendera hoy el Dr?"));
 for (let turno = 1; turno <= cantidaddepacientes; turno++) {
