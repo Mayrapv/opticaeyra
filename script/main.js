@@ -34,8 +34,43 @@ let paciente = {
 
 console.log(paciente)
 
+class Producto {
+    constructor(id, nombre, precio) {
+        this.id = id;
+        this.nombre =nombre.toUpperCase();
+        this.precio = parseFloat(precio);
+    }
+    toString = function () {
+        return this.nombre;
+    };
+}
 
-const Productos = ["LenteDeSol", "LentesConGraduacion", "LentesDeContacto"]
+let Productos = [
+  new Producto(4098, "Lente de sol Rayban Jackie", 49.000),
+  new Producto(1973, "Lente de sol Rayban Square", 51.000),
+  new Producto(4101, "Lente de sol Rayban Jackie Ohh", 52.500),
+  new Producto(3548, "Lente de sol Rayban Exagonal", 59.000),
+  new Producto(5429, "Lente de sol Vogue", 35.000),
+  new Producto(5432, "Lente de sol Vogue Azul", 38.000),
+  new Producto(4356, "Lente de sol Rayban clasico", 60.000)
+]
+console.log(Productos);
 
+class HoraDeAtencion {
+    constructor(id, hora) {
+        this.id;
+        this.hora = parseFloat(hora);
+    }
+}
 
+let Hora = [
+    new HoraDeAtencion(1, 13.00),
+    new HoraDeAtencion(2, 13.30),
+    new HoraDeAtencion(3, 14.00),
+    new HoraDeAtencion(4, 14.30),
+    new HoraDeAtencion(5, 15.00),
+    new HoraDeAtencion(6, 15.30),
+];
+
+let horalist = document.getElementsByClassName("HoraDeAtencion");
 
