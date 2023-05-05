@@ -8,19 +8,42 @@
 </head>
 <body>
     <H1>Selecciona tu turno</H1>
-    <div>
-        <form>
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre"> 
-            <label for="email">Email</label>
-            <input type="email" id="email"> 
-            <label for="telefono">Telefono</label>
-            <input type="tel" id="telefono">
-            <label for="mensaje">Mensaje...</label>
-            <textarea name="" id="mensaje" cols="30" rows="10"></textarea>
-            <button type="submit">Enviar</button>
+    <div class="container-fluid">
+    <form id="formulario">
+        <div class="mb-3">
+          <label for="nombres" class="form-label">Nombres</label>
+          <input type="text" class="form-control" id="nombres" />
+        </div>
+        <div class="mb-3">
+            <label for="apellidos" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" id="apellidos" />
+          </div>
+  
+          <div class="mb-3">
+            <label for="horadeatencion" class="form-label">Hora de atencion</label>
+            <select id="horadeatencion" class="form-select">
+              <option value="0">Seleccione una opción</option>
+            </select>
+          </div>
 
+          <div class="mb-3">
+            <label for="correo" class="form-label">Correo electrónico</label>
+            <input
+              type="email"
+              class="form-control"
+              id="correo"
+              aria-describedby="emailHelp"
+            />
+            <div id="emailHelp" class="form-text">
+              Te compartiremos novedades e informacion sobre tu turno.
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="btnInscribir">
+            Inscribir
+          </button>
         </form>
     </div>
+
 </body>
 </html>

@@ -56,21 +56,31 @@ let Productos = [
 ]
 console.log(Productos);
 
+ 
+
 class HoraDeAtencion {
     constructor(id, hora) {
-        this.id;
+        this.id = id;
         this.hora = parseFloat(hora);
     }
 }
 
-let Hora = [
-    new HoraDeAtencion(1, 13.00),
-    new HoraDeAtencion(2, 13.30),
-    new HoraDeAtencion(3, 14.00),
-    new HoraDeAtencion(4, 14.30),
-    new HoraDeAtencion(5, 15.00),
-    new HoraDeAtencion(6, 15.30),
+const Hora = [
+    new HoraDeAtencion(1, "13.00"),
+    new HoraDeAtencion(2, "13.30"),
+    new HoraDeAtencion(3, "14.00"),
+    new HoraDeAtencion(4, "14.30"),
+    new HoraDeAtencion(5, "15.00"),
+    new HoraDeAtencion(6, "15.30"),
 ];
 
-let horalist = document.getElementsByClassName("HoraDeAtencion");
+let horalist = document.getElementsById("HoraDeAtencion");
 
+
+Hora.forEach((_unaHora) => {
+    let item = document.createElement("option");
+    item.value = unaHora.id.toString();
+    item.innerText = unaHora.nombre;
+    horalist.append(item);
+  });
+  
