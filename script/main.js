@@ -56,7 +56,12 @@ let Productos = [
 ]
 console.log(Productos);
 
- 
+ console.log("mi array sin convertir", {Productos});
+ localStorage.setItem("Productos", JSON.stringify(Productos));
+
+ const recuperadas = localStorage.getItem("productos");
+ const convertido = JSON.parse(recuperadas);
+ console.log("productos recuperados del localStorage", {convertido});
 
 class HoraDeAtencion {
     constructor(id, hora) {
