@@ -74,13 +74,13 @@ const Hora = [
     new HoraDeAtencion(6, "15.30"),
 ];
 
-let horalist = document.getElementsById("HoraDeAtencion");
+let horaList = document.getElementsById("HoraDeAtencion");
 
 
-Hora.forEach((_unaHora) => {
+Hora.forEach((unaHora) => {
     let item = document.createElement("option");
     item.value = unaHora.id.toString();
     item.innerText = unaHora.nombre;
-    horalist.append(item);
+    horaList.append(item);
   });
   
