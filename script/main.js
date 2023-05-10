@@ -63,29 +63,3 @@ console.log(Productos);
  const convertido = JSON.parse(recuperadas);
  console.log("productos recuperados del localStorage", {convertido});
 
-class HoraDeAtencion {
-    constructor(id, hora) {
-        this.id = id;
-        this.hora = parseFloat(hora);
-    }
-}
-
-const Hora = [
-    new HoraDeAtencion(1, "13.00"),
-    new HoraDeAtencion(2, "13.30"),
-    new HoraDeAtencion(3, "14.00"),
-    new HoraDeAtencion(4, "14.30"),
-    new HoraDeAtencion(5, "15.00"),
-    new HoraDeAtencion(6, "15.30"),
-];
-
-let horaList = document.getElementsById("HoraDeAtencion");
-
-
-Hora.forEach((unaHora) => {
-    let item = document.createElement("option");
-    item.value = unaHora.id.toString();
-    item.innerText = unaHora.nombre;
-    horaList.append(item);
-  });
-  
