@@ -63,3 +63,22 @@ console.log(Productos);
  const convertido = JSON.parse(recuperadas);
  console.log("productos recuperados del localStorage", {convertido});
 
+ document.querySelector('p').innerHTML = "Nuestro objetivo es brindar siempre la mejor atención al paciente con asesoramiento profesional, tecnología adecuada y productos de calidad y actualidad";
+
+
+ const { value: emailHelp } = await Swal.fire({
+    title: 'Terms and conditions',
+    input: 'checkbox',
+    inputValue: 1,
+    inputPlaceholder:
+      'I agree with the terms and conditions',
+    confirmButtonText:
+      'Continue <i class="fa fa-arrow-right"></i>',
+    inputValidator: (result) => {
+      return !result && 'Te compartiremos novedades e informacion sobre tu turno'
+    }
+  })
+  
+  if (emailHelp) {
+    Swal.fire('No recibiras informacion sobre tu turno :)')
+  }
