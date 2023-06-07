@@ -2,26 +2,6 @@ function saludar() {
     console.log("Bienvenido a nuestro sistema de turnos Optica Eyra");
 }
 saludar()
-alert("Bienvenido a nuestro sistema de turnos Optica Eyra")
-
-let nombreyapellido = "Mayra Rivas";
-nombreyapellido = prompt ("¿Cual es tu nombre y apellido?");
-console.log("Mi nombre y apellido es " + nombreyapellido );
-
-let edad = prompt("¿Cual es tu edad?")
-if (edad >= 18) {
-    alert("Sos mayor de edad, puedes seleccionar un turno")
-} else {
-    alert("Sos menor de edad, no púedes seleccionar un turno")
-}
-
-
-let cantidaddepacientes = parseInt(prompt("¿Cuantos pacientes atendera hoy el Dr?"));
-for (let turno = 1; turno <= cantidaddepacientes; turno++) {
-    let nombre = prompt("¿Como se llama el paciente" + turno + "?");
-    console.log("El paciente ," + nombre + "tiene asignado el turno numero" + turno);
-}
-
 
 let paciente = {
     Nombre: "Mayra",
@@ -34,51 +14,62 @@ let paciente = {
 
 console.log(paciente)
 
+const miBoton = document.getElementById("miBoton");
+miBoton.addEventListener("click" , function() {
+  alert("¡Estaras recibiendo confirmacion en tu mail!");
+});
+
 class Producto {
-    constructor(id, nombre, precio) {
+    constructor(id, nombre, precio, img) {
         this.id = id;
-        this.nombre =nombre.toUpperCase();
-        this.precio = parseFloat(precio);
+        this.nombre = nombre;
+        this.precio = precio;
+        this.img = img;
+
     }
-    toString = function () {
-        return this.nombre;
-    };
 }
 
 let Productos = [
-  new Producto(4098, "Lente de sol Rayban Jackie", 49.000),
-  new Producto(1973, "Lente de sol Rayban Square", 51.000),
-  new Producto(4101, "Lente de sol Rayban Jackie Ohh", 52.500),
-  new Producto(3548, "Lente de sol Rayban Exagonal", 59.000),
-  new Producto(5429, "Lente de sol Vogue", 35.000),
-  new Producto(5432, "Lente de sol Vogue Azul", 38.000),
-  new Producto(4356, "Lente de sol Rayban clasico", 60.000)
+    new Producto(4098, "Lente de sol Rayban Jackie", 49.000, "../img/sol1.jpg"),
+    new Producto(1973, "Lente de sol Rayban Square", 51.000), "../img/sol2.jpg",
+    new Producto(4101, "Lente de sol Rayban Jackie Ohh", 52.500, "../img/sol3.jpg"),
+    new Producto(3548, "Lente de sol Rayban Exagonal", 59.000, "../img/sol4.jpg"),
+    new Producto(5429, "Lente de sol Vogue", 35.000, "../img/sol.vogue1.jpg"),
+    new Producto(5432, "Lente de sol Vogue Azul", 38.000, "../img/sol.vogue2.jpg"),
+    new Producto(4356, "Lente de sol Rayban clasico", 60.000, "../img/sol5.jpg")
 ]
+
 console.log(Productos);
 
- console.log("mi array sin convertir", {Productos});
- localStorage.setItem("Productos", JSON.stringify(Productos));
+console.log("mi array sin convertir", { Productos });
+localStorage.setItem("Productos", JSON.stringify(Productos));
 
- const recuperadas = localStorage.getItem("productos");
- const convertido = JSON.parse(recuperadas);
- console.log("productos recuperados del localStorage", {convertido});
+const recuperadas = localStorage.getItem("productos");
+const convertido = JSON.parse(recuperadas);
+console.log("productos recuperados del localStorage", { convertido });
 
- document.querySelector('p').innerHTML = "Nuestro objetivo es brindar siempre la mejor atención al paciente con asesoramiento profesional, tecnología adecuada y productos de calidad y actualidad";
+const contenedor = document.querySelector('#productos');
 
-
- const { value: emailHelp } = await Swal.fire({
-    title: 'Terms and conditions',
-    input: 'checkbox',
-    inputValue: 1,
-    inputPlaceholder:
-      'I agree with the terms and conditions',
-    confirmButtonText:
-      'Continue <i class="fa fa-arrow-right"></i>',
-    inputValidator: (result) => {
-      return !result && 'Te compartiremos novedades e informacion sobre tu turno'
-    }
-  })
-  
-  if (emailHelp) {
-    Swal.fire('No recibiras informacion sobre tu turno :)')
+function obtenerProductos() {
+    return [
+      { nombre: "Producto 1", descripcion: "Descripción del producto 1", precio: "$100" },
+      { nombre: "Producto 2", descripcion: "Descripción del producto 2", precio: "$200" },
+      { nombre: "Producto 3", descripcion: "Descripción del producto 3", precio: "$300" }
+    ];
   }
+
+  function mostrarProductos() {
+    const productos = obtenerProductos();
+    const contenedorProductos = document.getElementById("productos");
+    productos.forEach(producto => {
+      const productoHTML = document.createElement("div");
+      productoHTML.classList.add("producto");
+      productoHTML.innerHTML = `
+        <h3>${producto.nombre}</h3>
+        <p>${producto.descripcion}</p>
+        <span>${producto.precio}</span>`;
+      contenedorProductos.appendChild(productoHTML);
+    });
+  }
+
+  mostrarProductos();
